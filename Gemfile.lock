@@ -14,6 +14,8 @@ GEM
       ast (~> 2.4.1)
     rainbow (3.1.1)
     rake (13.0.6)
+    rake-compiler (1.2.0)
+      rake
     regexp_parser (2.5.0)
     rexml (3.2.5)
     rubocop (1.35.1)
@@ -45,8 +47,9 @@ PLATFORMS
 DEPENDENCIES
   fast_uuid!
   minitest
-  rake
+  rake (~> 13.0)
+  rake-compiler
   standardrb
 
 BUNDLED WITH
-   2.3.17
+   2.3.22

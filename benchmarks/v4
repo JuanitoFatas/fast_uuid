@@ -1,0 +1,19 @@
+#!/usr/bin/env ruby
+
+# Exit cleanly from an early interrupt
+Signal.trap("INT") { abort }
+
+require "benchmark/ips"
+require "securerandom"
+
+$LOAD_PATH.unshift File.expand_path("../lib", __dir__)
+require "fast_uuid"
+
+Benchmark.ips do |x|
+  x.config(time: 5, warmup: 2)
+
+  x.report("SecureRandom.uuid") { SecureRandom.uuid }
+  x.report("FastUUID.v4") { FastUUID.v4 }
+
+  x.compare!
+end; nil
