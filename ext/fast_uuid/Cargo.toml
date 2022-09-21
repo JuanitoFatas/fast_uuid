@@ -12,5 +12,4 @@ crate-type = ["cdylib"]
 rb-sys = "0.9.30"
 rb-allocator = "0.9.6"
 magnus = { version = "0.3.2", features = ["rb-sys-interop"] }
-uuid = { version = "1.1.2", features = ["v4"] }
-
+uuid = { version = "1.1.2", features = ["v4", "fast-rng"] }
